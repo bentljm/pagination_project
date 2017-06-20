@@ -16,15 +16,25 @@
 
 **Build** a single page and react JS component that implements an HTML/CSS table that displays the data as rows
 
+Each row should be one object from the array and each column should be one element of the object.
+
+The table should have following controls:
+
+Page Size dropdown: This dropdown will let you select the page size and have values like (5 Items, 10 Items, 25 Items, 50 Items, 75 Items, and 100 Items).
+Next Button: The next button pages forward and loads the next set of rows
+Prev Button: The previous button page pages backward and loads the previous set of rows
+Count: The count should show the current indices and total number of items (eg: 11-20 of 100)
+Sorting: The rows should be sortable by clicking the column header
+
 ## Components
 
-** App.js -- Container component for app
+** App.js: Container component for app
   -handleClick() -- updates active state variable to nav item that is currently selected
 
-  ** Navigation.js -- Top Nav component
-    -checkActiveClass() -- adds 'active' class to nav item that is currently selected
+  ** Navigation.js: Top Nav component
+  -checkActiveClass() -- adds 'active' class to nav item that is currently selected
 
-  ** TableContainer.js -- Container for Table and TableNav Components:
+  ** TableContainer.js: Container for Table and TableNav Components:
     -getTotal() -- returns total length of data array
     -onSelectChange() -- updates sorting criteria based on dropdown menu
     -onColumnClick() -- updates sorting criteria based on selected column header
@@ -34,14 +44,14 @@
     -nextPage() -- renders next set of data based on next page and items per page
     -previousPage() -- renders previous set of data based on previous page and items per page
 
-    ** TableNav.js -- Table nav component:
+    ** TableNav.js: Table nav component:
     -renderNumbers() -- renders start and end index for pagination
 
-    ** Table.js -- Container for TableHeader and TableRow components
+    ** Table.js: Container for TableHeader and TableRow components
 
-      ** TableHeader.js -- Creates header for each field in data set
+      ** TableHeader.js: Creates header for each field in data set
 
-      ** TableRow.js -- Creates row component for each address in data set
+      ** TableRow.js: Creates row component for each address in data set
 
 
 Below you will find some information on how to perform common tasks.<br>
