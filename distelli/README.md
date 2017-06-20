@@ -28,6 +28,16 @@ Sorting: The rows should be sortable by clicking the column header
 
 ## Components
 
+
+
+
+
+
+
+
+
+
+
 ** App.js: Container component for app
   -handleClick() -- updates active state variable to nav item that is currently selected
 
