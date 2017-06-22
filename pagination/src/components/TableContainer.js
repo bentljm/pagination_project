@@ -50,7 +50,7 @@ class TableContainer extends Component {
   filterData() {
     var total = this.getTotal();
     var startIndex = (this.state.currentPage - 1) * this.state.itemsPerPage;
-    var endIndex = this.state.currentPage * this.state.itemsPerPage;
+    var endIndex = this.getEndIndex(startIndex);
     if (endIndex > total) {
       startIndex = total - this.state.itemsPerPage;
       endIndex = total;
