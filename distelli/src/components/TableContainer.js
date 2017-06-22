@@ -58,18 +58,18 @@ class TableContainer extends Component {
   }
 
   sortData(sortBy, previousSortBy) {
-    var sortingOption = sortBy.toLowerCase().replace(' ', '');
-    var ascending = this.state.sortingDirection[sortingOption];
-    if (sortingOption === previousSortBy) {
+    sortBy = sortBy.toLowerCase().replace(' ', '');
+    previousSortBy = previousSortBy.toLowerCase().replace(' ', '');
+    var ascending = this.state.sortingDirection[sortBy];
+    if (sortBy === previousSortBy) {
       ascending = !ascending;
-      this.setState({ sortingDirection: extend(this.state.sortingDirection, { [sortingOption]: !this.state.sortingDirection[sortingOption]}) });
+      this.setState({ sortingDirection: extend(this.state.sortingDirection, { [sortBy]: !this.state.sortingDirection[sortBy]})});
     }
-    var data = this.state.data;
-    data = data.sort(function(a, b) {
-      if(a[sortingOption] < b[sortingOption]) {
+    var data = this.state.data.sort(function(a, b) {
+      if(a[sortBy] < b[sortBy]) {
         return ascending ? -1 : 1;
       }
-      if(a[sortingOption] > b[sortingOption]) {
+      if(a[sortBy] > b[sortBy]) {
         return ascending ? 1 : -1;
       }
       return 0;
