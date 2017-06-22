@@ -4,7 +4,6 @@ import data from '../data.json';
 import TableNav from './TableNav';
 import Table from './Table';
 
-
 class TableContainer extends Component {
   constructor(props) {
     super(props);
