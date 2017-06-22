@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { extend } from 'underscore';
+import data from '../data.json';
 import TableNav from './TableNav';
 import Table from './Table';
-import data from '../data.json';
-import { extend } from 'underscore';
+
 
 class TableContainer extends Component {
   constructor(props) {
@@ -64,7 +65,7 @@ class TableContainer extends Component {
     var ascending = this.state.sortingDirection[sortBy];
     if (sortBy === previousSortBy) {
       ascending = !ascending;
-      this.setState({ sortingDirection: extend(this.state.sortingDirection, { [sortBy]: ascending })});
+      this.setState({ sortingDirection: extend(this.state.sortingDirection, { [sortBy]: ascending }) });
     }
     var data = this.state.data.sort(function(a, b) {
       if(a[sortBy] < b[sortBy]) {
