@@ -33,7 +33,12 @@ table {
   background: #F0F0F0;
 }
 
-.name {
+.firstname {
+  padding-left: 10px;
+  width: 13%;
+}
+
+.lastname {
   padding-left: 10px;
   width: 13%;
 }

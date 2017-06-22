@@ -9,15 +9,7 @@ class Table extends Component {
       <table>
         <TableHeader onColumnClick={this.props.onColumnClick} />
         {this.props.filteredData.map(data =>
-          <TableRow
-            firstName={data.firstname}
-            lastName={data.lastname}
-            country={data.country}
-            address={data.address}
-            city={data.city}
-            state={data.state}
-            zip={data.zip}
-            phone={data.phone} />
+          <TableRow data={data} />
         )}
       </table>
     );

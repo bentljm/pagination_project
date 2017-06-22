@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TableNav from './TableNav';
 import Table from './Table';
 import data from '../data.json';
+import { extend } from 'underscore';
 
 class TableContainer extends Component {
   constructor(props) {
@@ -12,8 +13,9 @@ class TableContainer extends Component {
       itemsPerPage: 10,
       currentPage: 1,
       filteredData: [],
+      itemsPerPageOptions: [5,10,25,50,75,100],
       sortingOptions: ['First Name', 'Last Name', 'Country', 'Address', 'City', 'State', 'Zip', 'Phone'],
-      itemsPerPageOptions: [5,10,25,50,75,100]
+      sortingDirection: {'firstname': true, 'lastname': true, 'country': true, 'address': true, 'city': true, 'state': true, 'zip': true, 'phone': true, }
     };
     this.getTotal = this.getTotal.bind(this);
     this.onSelectChange = this.onSelectChange.bind(this);
@@ -38,9 +40,10 @@ class TableContainer extends Component {
     }
   }
 
-  onColumnClick(e, option) {
-    this.setState({ sortBy: option });
-    this.sortData(option, this.state.sortBy);
+  onColumnClick(e) {
+    var clicked = e.target.getAttribute('class');
+    this.setState({ sortBy: clicked });
+    this.sortData(clicked, this.state.sortBy);
   }
 
   filterData() {
@@ -56,7 +59,11 @@ class TableContainer extends Component {
 
   sortData(sortBy, previousSortBy) {
     var sortingOption = sortBy.toLowerCase().replace(' ', '');
-    var ascending = (sortingOption === previousSortBy ? false : true);
+    var ascending = this.state.sortingDirection[sortingOption];
+    if (sortingOption === previousSortBy) {
+      ascending = !ascending;
+      this.setState({ sortingDirection: extend(this.state.sortingDirection, { [sortingOption]: !this.state.sortingDirection[sortingOption]}) });
+    }
     var data = this.state.data;
     data = data.sort(function(a, b) {
       if(a[sortingOption] < b[sortingOption]) {
