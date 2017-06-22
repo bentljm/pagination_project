@@ -1,0 +1,76 @@
+.nav {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding-top: 30px;
+  height: 32px;
+  width: 90%;
+}
+
+.title {
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #7F56C5;
+}
+
+.divider{
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #BCBEC0;
+}
+
+.sortBy {
+  font-size: .75rem;
+  font-weight: 400;
+  color: #7F56C5;
+}
+
+.firstSelect {
+  margin-left: 4px;
+  margin-right: 530px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #1DAFE9;
+}
+
+.itemsPerPage {
+  font-size: .75rem;
+  font-weight: 400;
+  color: #7F56C5;
+}
+
+.secondSelect {
+  align-self: flex-end;
+  margin-left: 4px;
+  margin-right: 20px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #1DAFE9;
+}
+
+.pagination {
+  margin-right: auto;
+  flex-basis: 6%;
+  font-size: .875rem;
+  font-weight: 700;
+  color: #7F56C5;
+}
+
+.of {
+  margin-right: 6px;
+  font-size: .875rem;
+  font-weight: 400;
+  color: #7F56C5;
+}
+
+.next {
+  color: #1DAFE9;
+}
+
+.previous {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #1DAFE9;
+}
