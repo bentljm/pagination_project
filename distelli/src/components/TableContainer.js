@@ -15,7 +15,8 @@ class TableContainer extends Component {
       filteredData: [],
       itemsPerPageOptions: [5,10,25,50,75,100],
       sortingOptions: ['First Name', 'Last Name', 'Country', 'Address', 'City', 'State', 'Zip', 'Phone'],
-      sortingDirection: {'firstname': true, 'lastname': true, 'country': true, 'address': true, 'city': true, 'state': true, 'zip': true, 'phone': true, }
+      sortingDirection: {'firstname': true, 'lastname': true, 'country': true, 'address': true, 'city': true, 'state': true,
+        'zip': true, 'phone': true, }
     };
     this.getTotal = this.getTotal.bind(this);
     this.onSelectChange = this.onSelectChange.bind(this);
@@ -63,7 +64,7 @@ class TableContainer extends Component {
     var ascending = this.state.sortingDirection[sortBy];
     if (sortBy === previousSortBy) {
       ascending = !ascending;
-      this.setState({ sortingDirection: extend(this.state.sortingDirection, { [sortBy]: !this.state.sortingDirection[sortBy]})});
+      this.setState({ sortingDirection: extend(this.state.sortingDirection, { [sortBy]: ascending })});
     }
     var data = this.state.data.sort(function(a, b) {
       if(a[sortBy] < b[sortBy]) {
